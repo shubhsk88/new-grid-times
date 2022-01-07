@@ -61,7 +61,9 @@ const ProfileButton = styled.button`
 const LogoWrapper = styled.div`
   display: none;
   @media ${QUERIES.laptopAndUp} {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 const Row = styled(MaxWidthWrapper)`

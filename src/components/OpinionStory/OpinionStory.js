@@ -17,11 +17,14 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  display: flex;
 `;
 
 const Avatar = styled.img`
   display: block;
   width: 48px;
+  justify-self: flex-end;
+  align-self: center;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;

@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {
-  MAIN_STORY,
-  OPINION_STORIES,
-  SECONDARY_STORIES,
-} from '../../data';
+import { MAIN_STORY, OPINION_STORIES, SECONDARY_STORIES } from '../../data';
 
 import SectionTitle from '../SectionTitle';
 import MainStory from '../MainStory';
@@ -23,7 +19,9 @@ const MainStoryGrid = () => {
       <SecondaryStorySection>
         <StoryList>
           {SECONDARY_STORIES.map((story, index) => (
-            <SecondaryStory key={story.id} {...story} />
+            <SecondaryStoryWrapper key={story.id}>
+              <SecondaryStory {...story} />
+            </SecondaryStoryWrapper>
           ))}
         </StoryList>
       </SecondaryStorySection>
@@ -65,9 +63,17 @@ const SecondaryStorySection = styled.section`
 
 const StoryList = styled.div`
   display: flex;
+
   flex-direction: column;
 `;
 
+const SecondaryStoryWrapper = styled.div`
+  &:not(:last-of-type) {
+    border-bottom: 2px solid var(--color-gray-300);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+`;
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
 `;
